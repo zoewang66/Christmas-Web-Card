@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+  
+      <!-- Fonts -->
+      <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Trirong&effect=neon|outline|emboss|shadow-multiple">
+  
+      <title>Merry Christmas</title>
+      <style>
+        body {
+            background-image: url("static/pexels-photo-214239.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .title {
+          font-size: 80px;
+          font-family:'Sofia';
+          color: #fe1530;
+          text-align: right;
+          text-shadow: 3px 3px 10px #f3da4a;
+          animation: animation 4s infinite;
+        }
+
+        .name{
+          font-size: 75px;
+          font-family:'Sofia';
+          color: #f3da4a;
+          text-align: right;
+          text-shadow: 3px 3px 10px #f3da4a;
+          animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+          from {
+            transform: translateX(-78%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes animation {
+          0% {
+            text-shadow: 3px 3px 10px #60cae8;
+          }
+          50% {
+            text-shadow: 5px 5px 20px #6faf3a;
+          }
+          100% {
+            text-shadow: 3px 3px 10px #726ee4;
+          }
+        }
+
+
+        .card{
+          -webkit-perspective: 1500px;
+          -moz-perspective: 1500px;
+          perspective: 1500px;
+          position: absolute;
+          left: calc(50% - 250px);
+          top: calc(50% - 175px);
+          -webkit-transition-property: -webkit-transform;
+          -moz-transition-property: -moz-transform;
+          transition-property: transform;
+          -webkit-transition-duration: 1s;
+          -moz-transition-duration: 1s;
+          transition-duration: 1s;
+          -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -webkit-transition-delay: initial;
+          -moz-transition-delay: initial;
+          transition-delay: initial;
+          -webkit-transform: rotate(10deg) translate(0, 0);
+          -moz-transform: rotate(10deg) translate(0, 0);
+          -ms-transform: rotate(10deg) translate(0, 0);
+          -o-transform: rotate(10deg) translate(0, 0);
+          transform: rotate(10deg) translate(0, 0);
+          -webkit-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+          -moz-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+          animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        input#open {
+          display: none;
+        }
+
+        .card-front {
+          position: relative;
+          background-color: #fff;
+          width: 300px;
+          height:450px;
+          overflow: hidden;
+          transform-origin: left;
+          box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+          transition: .3s;
+        }
+
+        .card-inside {
+          position: absolute;
+          background-color: #ccc9b6;
+          width: 300px;
+          height:450px;
+          z-index:-1;
+          left:0;
+          top:0;
+          box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+        }
+
+
+        .open {
+          position: absolute;
+          width: 300px;
+          height:450px;
+          left:0;
+          top:0;
+          background-color: transparent;
+          z-index:6;
+          cursor: pointer;
+        }
+
+        #open:checked ~ .card-front {
+          transform: rotateY(-155deg);
+          box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+        }
+
+        #open:checked ~ .card-front:before {
+          z-index:5;
+        }
+        
+        .card-front:before {
+          content:"";
+          position: absolute;
+          width: 300px;
+          height: 450px;
+          background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+          background-size: cover;
+          border: 5px solid #ccc9b6;
+        }
+
+        .text {
+          position: absolute;
+          font-family: 'Sofia';
+          top:260px;
+          width:200px;
+          text-align: center;
+          font-size:15px;
+        }
+
+
+        .text:before {
+          content:"Merry Christmas!";
+          position: absolute;
+          width:300px;
+          color: #2085fe;
+          text-align: center;
+          line-height: 10px;
+          top:-42.5px;
+          left:61px;
+        }
+
+        .text:after {
+          content:"";
+          position: absolute;
+          width:0;
+          height:0;
+          color: #2085fe;
+          border-right: 7px solid transparent;
+          border-left: 7px solid transparent;
+          border-bottom: 20px solid #ccc9b6;
+          top:-185px;
+          left:93px;
+        }
+
+        .card-inside:before {
+          content:"";
+          position: absolute;
+          width: 300px;
+          height: 450px;
+          background-color: #e8e6d8;
+          border: 5px solid #ccc9b6;
+        }
+
+        .wishes {
+          position: absolute;
+          width: 250px;
+          text-align: center;
+          font-family: 'Sofia', sans-serif;
+          line-height:25px;
+          font-size:23px;
+          color:#1e2748;
+          height: 350px;
+          top: 8%;
+          left:25px;
+        }
+
+        .click-text {
+          font-size: 8px;
+          font-family: "Architects Daughter";
+        }
+        .click-icon {
+          position: absolute;
+          left: 40%;
+          -webkit-transform: translate(-50%, 0);
+          -moz-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          -o-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+          bottom: 20px;
+          -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
+          -moz-animation: iconAnimation 1s infinite alternate ease-in-out;
+          animation: iconAnimation 1s infinite alternate ease-in-out;
+          -webkit-transition: opacity 0.5s ease-in-out;
+          -moz-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+          opacity: 1;
+        }
+
+        .click-icon svg {
+          width: 96px;
+          height: 96px;
+        }
+
+        @media (max-width: 767px) {
+          .click-icon svg {
+            width: 72px;
+            height: 72px;
+          }
+        }
+
+        @media (max-width: 479px) {
+          .click-icon svg {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        .click-icon.is-hidden {
+          opacity: 0;
+        }
+
+
+        #greeting {
+          display: inline;
+          margin-right: 5px;
+        }
+
+        #hi {
+          display: inline;
+        }
+
+       
+        @media (max-width: 767px) {
+          .title {
+            font-size: 40px;
+          }
+          .name {
+            font-size: 35px;
+          }
+          .wishes {
+            font-size: 18px;
+          }
+        }
+
+        .custom-audio-symbol {
+          width:45px;
+          height: 45px;
+          cursor: pointer;
+          position: absolute; 
+          top: 30px; 
+          left: 50px; 
+          display: block; 
+        }
+    </style>
+
+    <audio id="myAudio" src="static/silent-night_60sec-177550.mp3" type="audio/mpeg" autoplay loop>
+    </audio>
+ 
+    <svg class="custom-audio-symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" onclick="toggleAudio()">
+      <path d="M24 20.682c-.002 1.555-1.17 2.318-2.24 2.318-.903 0-1.76-.544-1.76-1.616 0-1.104 1.201-2.118 2.515-2.118.161 0 .323.015.485.047v-4.312l-6 1.229v5.45c-.002 1.556-1.18 2.32-2.258 2.32-.906 0-1.742-.542-1.742-1.61 0-1.106 1.201-2.125 2.518-2.125.16 0 .322.015.484.047v-6.52l7.998-1.792v8.682zm-13-6.682c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm0-1c1.103 0 2-.897 2-2s-.897-2-2-2-2 .897-2 2 .897 2 2 2zm-1.818 2.646c-1.293-.508-2.319-1.534-2.827-2.827l-1.025.128c.6 1.746 1.979 3.125 3.725 3.724l.127-1.025zm-4.869-2.572l-1 .125c.757 2.648 2.84 4.731 5.488 5.488l.125-1c-2.194-.683-3.93-2.418-4.613-4.613zm8.505-6.72c1.293.508 2.319 1.534 2.827 2.828l1.025-.128c-.6-1.746-1.979-3.125-3.725-3.725l-.127 1.025zm-1.771 15.644c.082-.734.378-1.441.878-2.045-.304.03-.613.047-.925.047-4.963 0-9-4.038-9-9s4.037-9 9-9c4.912 0 8.91 3.957 8.992 8.849l1.978-.443c-.311-5.798-5.096-10.406-10.97-10.406-6.075 0-11 4.925-11 11s4.925 11 11 11l.047-.002zm2.151-18.685l-.125 1c2.195.682 3.931 2.418 4.613 4.613l1-.125c-.755-2.648-2.838-4.732-5.488-5.488z"/>
+    </svg>
+  </head>
+
+  <body>
+    <div class="container-sm">
+      <h1 class="title">Merry Christmas!</h1>
+      <h2 class="name" id="name">:D</h2>
+
+
+      <div class="card">
+        <input id="open" type="checkbox">
+        <label class="open" for="open"></label>
+        <div class="card-front"></div>
+        <div class="card-inside">
+          <div class="wishes">
+            <span id="greeting">Dear</span><span id="hi">names</span>,
+            <br><br>Wish you have the best time of the year!
+            <br><br>May the true spirit of Christmas fill your heart with love, your home with joy, and your life with blessings.
+            <br><br>Wishing you a blessed and Merry Christmas!<br><br><i>Zoe Wang</i></div>
+        </div>
+      </div>
+    </div>
+    
+    <span class="click-icon">
+      <svg viewBox="0 0 40 45" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#1165ae" d="M31.6 17.7V26c0 1.9-.7 3.7-2 5.1v.9c0 1.6-1.3 3-3 3h-8.4c-1.6 0-3-1.3-3-3 0-.6.5-1 1-1s1 .4 1 1c0 .5.4 1 1 1h8.4c.5 0 1-.4 1-1v-1.2-.3-.1c0-.1.1-.2.2-.3 1.1-1.1 1.7-2.5 1.7-4v-8.3c0-.3-.1-.5-.3-.7-.1-.1-.5-.4-1-.3-.4.1-.8.6-.8 1.1v2.4c0 .6-.5 1-1 1s-1-.4-1-1v-5.5c0-.3-.1-.5-.3-.7s-.4-.3-.7-.3c-.5 0-1 .5-1 1v5.5c0 .6-.5 1-1 1s-1-.4-1-1v-8.5c0-.3-.1-.5-.3-.7s-.4-.3-.7-.3c-.5 0-1 .5-1 1v8.5c0 .6-.5 1-1 1s-1-.4-1-1V7.7c0-.3-.1-.5-.3-.7-.1-.1-.5-.4-1-.3-.4.1-.8.6-.8 1.1V20c0 .4-.2.8-.6.9-.4.2-.8.1-1.1-.2L11 18.1c-.6-.6-1.6-.6-2.2.1-.5.6-.4 1.5.2 2.1l7 7c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3-.3 0-.5-.1-.7-.3l-7-7.1c-1.3-1.3-1.5-3.5-.3-4.8C8 16 9 15.5 10 15.5c.9 0 1.8.4 2.5 1l.9.9V7.9c0-1.4.9-2.7 2.3-3 1-.3 2.1 0 2.8.8.6.6.9 1.3.9 2.1V9c.3-.1.7-.2 1-.2.8 0 1.5.3 2.1.9s.9 1.3.9 2.1v.2c.3-.1.7-.2 1-.2.8 0 1.5.3 2.1.9s.9 1.3.9 2.1v.2c.1 0 .2-.1.3-.1 1-.3 2.1 0 2.8.8.8.5 1.1 1.3 1.1 2z" />
+        <text x="20" y="43" class="click-text" fill="#1165ae" text-anchor="middle">
+          open me!
+        </text>
+      </svg>
+     </span>
+      
+    <script>
+      // Prompt the user for their name
+      var name = prompt("Hello! May I have your name?");
+
+      // Update the content of the card with the entered name
+      document.getElementById("name").innerText = document.getElementById("name").innerText 
+            .replace(":D", name); 
+      document.getElementById("hi").innerText = name;
+
+      function toggleAudio() {
+        var audioPlayer = document.getElementById('myAudio');
+
+        // If audio is paused, play it; otherwise, pause it
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+        } else {
+          audioPlayer.pause();
+        }
+      }
+
+      const elemCard = document.querySelector("div.card");
+      const elemClickIcon = document.querySelector("span.click-icon");
+      elemCard.addEventListener("click", function () {
+        elemCard.classList.toggle("is-opened");
+        elemClickIcon.classList.toggle("is-hidden");
+      });
+  </script>
+
+  </body>
+</html>
