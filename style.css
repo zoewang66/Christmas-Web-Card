@@ -1,0 +1,842 @@
+body {
+    background-image: url("static/pexels-photo-214239.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title {
+    font-family: 'Sofia';
+    color: #FE4A49;
+    text-shadow: 1px 1px 5px #FE4A49;
+    text-align: right;
+    padding-top: 20px;
+}
+
+.name {
+    font-family: 'Sofia';
+    color: #F8E9E9;
+    text-align: right;
+    text-shadow: 3px 3px 10px #F8E9E9;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-78%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.click-icon.is-hidden {
+    opacity: 0;
+}
+
+#greeting {
+    display: inline;
+    margin-right: 5px;
+}
+
+#hi {
+    display: inline;
+}
+
+
+
+.card {
+    -webkit-perspective: 1500px;
+    -moz-perspective: 1500px;
+    perspective: 1500px;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: rotate(5deg) translate(0, 0);
+    -moz-transform: rotate(5deg) translate(0, 0);
+    -ms-transform: rotate(5deg) translate(0, 0);
+    -o-transform: rotate(5deg) translate(0, 0);
+    transform: rotate(5deg) translate(0, 0);
+    -webkit-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+    -moz-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+    animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+
+input#open {
+    display: none;
+}
+
+#open:checked~.card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+}
+
+#open:checked~.card-front:before {
+    z-index: 5;
+}
+
+.click-text {
+    font-size: 12px;
+    font-family: "Architects Daughter";
+}
+
+.click-icon {
+    position: absolute;
+    left: 40%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    bottom: 20px;
+    -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
+    -moz-animation: iconAnimation 1s infinite alternate ease-in-out;
+    animation: iconAnimation 1s infinite alternate ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+
+@media (min-width: 1200px) {
+    .click-icon svg {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        bottom: 40px;
+        left: 230px;
+    }
+
+    .title {
+        font-size: 80px;
+        font-family: 'Sofia';
+        color: #FE4A49;
+        text-shadow: 1px 1px 5px #FE4A49;
+        text-align: right;
+        padding-top: 20px;
+    }
+
+    .name {
+        font-size: 75px;
+        font-family: 'Sofia';
+        color: #F8E9E9;
+        text-align: right;
+        text-shadow: 3px 3px 10px #F8E9E9;
+        animation: slideIn 1s ease-in-out;
+    }
+
+    .card-front {
+        position: relative;
+        background-color: #F8E9E9;
+        width: 450px;
+        height: 600px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 200px 40px 200px rgba(0, 0, 0, .13), 60px 0 100px rgba(0, 0, 0, 0.1);
+        transition: .3s;
+    }
+
+    .card-inside {
+        position: absolute;
+        background-color: #F8E9E9;
+        width: 450px;
+        height: 600px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    .open {
+        position: absolute;
+        width: 450px;
+        height: 600px;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    #web-title {
+        position: relative;
+        right: 130px;
+    }
+
+    .card-front:before {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 600px;
+        background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+        background-size: cover;
+        border: 5px solid #F8E9E9;
+    }
+
+    .text {
+        position: absolute;
+        font-family: 'Sofia';
+        top: 260px;
+        width: 200px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .text:before {
+        content: "Merry Christmas!";
+        position: absolute;
+        width: 390px;
+        color: #2085fe;
+        text-align: center;
+        line-height: 10px;
+        top: -42.5px;
+        left: 61px;
+    }
+
+    .text:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        color: #2085fe;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 20px solid #F8E9E9;
+        top: -185px;
+        left: 93px;
+    }
+
+    .card-inside:before {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 600px;
+        background-color: #F8E9E9;
+        border: 5px solid #F8E9E9;
+    }
+
+    .wishes {
+        position: absolute;
+        width: 390px;
+        text-align: left;
+        font-family: "Architects Daughter";
+        line-height: 34px;
+        font-size: 32px;
+        color: #1e2748;
+        height: 550px;
+        top: 8%;
+        left: 40px;
+    }
+
+    .click-text {
+        font-size: 12px;
+        font-family: "Architects Daughter";
+    }
+
+    .card {
+        position: absolute;
+        left: calc(50% - 190px);
+        top: calc(50% - 260px);
+    }
+
+    .custom-audio-symbol {
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        left: 70px;
+        display: block;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .click-icon svg {
+        width: 90px;
+        height: 90px;
+        position: relative;
+        bottom: 90px;
+        left: 160px;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .name {
+        font-size: 55px;
+    }
+
+    .wishes {
+        font-size: 20px;
+    }
+
+    .click-text {
+        font-size: 10px;
+        font-family: "Architects Daughter";
+    }
+
+    .card {
+        position: absolute;
+        left: calc(50% - 20px);
+        top: calc(50% - 210px);
+    }
+
+    .card-front {
+        position: relative;
+        background-color: #F8E9E9;
+        width: 350px;
+        height: 500px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 200px 40px 200px rgba(0, 0, 0, .13), 60px 0 100px rgba(0, 0, 0, 0.1);
+        transition: .3s;
+    }
+
+    .card-inside {
+        position: absolute;
+        background-color: #F8E9E9;
+        width: 350px;
+        height: 500px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    .open {
+        position: absolute;
+        width: 350px;
+        height: 500px;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    #web-title {
+        position: relative;
+        right: 100px;
+    }
+
+    .card-front:before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 500px;
+        background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+        background-size: cover;
+        border: 5px solid #F8E9E9;
+    }
+
+    .text {
+        position: absolute;
+        font-family: 'Sofia';
+        top: 40px;
+        width: 330px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .text:before {
+        content: "Merry Christmas!";
+        position: absolute;
+        width: 300px;
+        color: #2085fe;
+        text-align: center;
+        line-height: 10px;
+        top: -42.5px;
+        left: 61px;
+    }
+
+    .text:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        color: #2085fe;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 20px solid #F8E9E9;
+        top: -15px;
+        left: 93px;
+    }
+
+    .card-inside:before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 500px;
+        background-color: #F8E9E9;
+        border: 5px solid #F8E9E9;
+    }
+
+    .wishes {
+        position: absolute;
+        width: 320px;
+        text-align: left;
+        font-family: "Architects Daughter";
+        line-height: 28px;
+        font-size: 25px;
+        color: #1e2748;
+        height: 450px;
+        top: 8%;
+        left: 25px;
+    }
+
+    .custom-audio-symbol {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        left: 70px;
+        display: block;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+    .click-icon svg {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        bottom: 100px;
+        left: 170px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .name {
+        font-size: 45px;
+    }
+
+    .wishes {
+        font-size: 20px;
+    }
+
+    .click-text {
+        font-size: 10px;
+        font-family: "Architects Daughter";
+    }
+
+    .card {
+        position: absolute;
+        left: calc(50% - 20px);
+        top: calc(50% - 170px);
+    }
+
+    .card-front {
+        position: relative;
+        background-color: #F8E9E9;
+        width: 300px;
+        height: 450px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 200px 40px 200px rgba(0, 0, 0, .13), 60px 0 100px rgba(0, 0, 0, 0.1);
+        transition: .3s;
+    }
+
+    .card-inside {
+        position: absolute;
+        background-color: #F8E9E9;
+        width: 300px;
+        height: 450px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    .open {
+        position: absolute;
+        width: 300px;
+        height: 450px;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    #web-title {
+        position: relative;
+        right: 100px;
+    }
+
+    .card-front:before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 450px;
+        background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+        background-size: cover;
+        border: 5px solid #F8E9E9;
+    }
+
+    .text {
+        position: absolute;
+        font-family: 'Sofia';
+        top: 40px;
+        width: 330px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .text:before {
+        content: "Merry Christmas!";
+        position: absolute;
+        width: 300px;
+        color: #2085fe;
+        text-align: center;
+        line-height: 10px;
+        top: -42.5px;
+        left: 61px;
+    }
+
+    .text:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        color: #2085fe;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 20px solid #F8E9E9;
+        top: -15px;
+        left: 93px;
+    }
+
+    .card-inside:before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 450px;
+        background-color: #F8E9E9;
+        border: 5px solid #F8E9E9;
+    }
+
+    .wishes {
+        position: absolute;
+        width: 270px;
+        text-align: left;
+        font-family: "Architects Daughter";
+        line-height: 25px;
+        font-size: 22px;
+        color: #1e2748;
+        height: 450px;
+        top: 8%;
+        left: 20px;
+    }
+
+    .custom-audio-symbol {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        left: 70px;
+        display: block;
+    }
+
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .click-icon svg {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        bottom: 100px;
+        left: 100px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .name {
+        font-size: 25px;
+    }
+
+
+    .click-text {
+        font-size: 8px;
+        font-family: "Architects Daughter";
+    }
+
+    .card {
+        position: absolute;
+        left: calc(50% - 20px);
+        top: calc(50% - 140px);
+    }
+
+    .card-front {
+        position: relative;
+        background-color: #F8E9E9;
+        width: 200px;
+        height: 300px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 200px 40px 200px rgba(0, 0, 0, .13), 60px 0 100px rgba(0, 0, 0, 0.1);
+        transition: .3s;
+    }
+
+    .card-inside {
+        position: absolute;
+        background-color: #F8E9E9;
+        width: 200px;
+        height: 300px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    .open {
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    #web-title {
+        position: relative;
+        right: 50px;
+    }
+
+    .card-front:before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+        background-size: cover;
+        border: 5px solid #F8E9E9;
+    }
+
+    .text {
+        position: absolute;
+        font-family: 'Sofia';
+        top: 30px;
+        width: 280px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .text:before {
+        content: "Merry Christmas!";
+        position: absolute;
+        width: 180px;
+        color: #2085fe;
+        text-align: center;
+        line-height: 10px;
+        top: -42.5px;
+        left: 61px;
+    }
+
+    .text:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        color: #2085fe;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 10px solid #F8E9E9;
+        top: -15px;
+        left: 93px;
+    }
+
+    .card-inside:before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        background-color: #F8E9E9;
+        border: 5px solid #F8E9E9;
+    }
+
+    .wishes {
+        position: absolute;
+        width: 170px;
+        text-align: left;
+        font-family: "Architects Daughter";
+        line-height: 16px;
+        font-size: 14px;
+        color: #1e2748;
+        height: 280px;
+        top: 8%;
+        left: 20px;
+    }
+
+    .custom-audio-symbol {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        left: 70px;
+        display: block;
+    }
+
+}
+
+@media (max-width: 479px) {
+    .click-icon svg {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        bottom: 200px;
+        left: 100px;
+    }
+
+    .custom-audio-symbol {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        display: block;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+
+    .click-text {
+        font-size: 10px;
+        font-family: "Architects Daughter";
+    }
+
+    .card {
+        position: absolute;
+        left: calc(50% - 10px);
+        top: calc(50% - 140px);
+    }
+
+    .card-front {
+        position: relative;
+        background-color: #F8E9E9;
+        width: 160px;
+        height: 240px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 200px 40px 200px rgba(0, 0, 0, .13), 60px 0 100px rgba(0, 0, 0, 0.1);
+        transition: .3s;
+    }
+
+    .card-inside {
+        position: absolute;
+        background-color: #F8E9E9;
+        width: 160px;
+        height: 240px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    .open {
+        position: absolute;
+        width: 160px;
+        height: 240px;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    #web-title {
+        position: relative;
+        right: 50px;
+    }
+
+    .card-front:before {
+        content: "";
+        position: absolute;
+        width: 160px;
+        height: 240px;
+        background-image: url("static/70bb1aefb21aa4431fc7e2fedf02e8b0.jpg");
+        background-size: cover;
+        border: 5px solid #F8E9E9;
+    }
+
+    .text {
+        position: absolute;
+        font-family: 'Sofia';
+        top: 30px;
+        width: 140px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .text:before {
+        content: "Merry Christmas!";
+        position: absolute;
+        width: 180px;
+        color: #2085fe;
+        text-align: center;
+        line-height: 10px;
+        top: -42.5px;
+        left: 61px;
+    }
+
+    .text:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        color: #2085fe;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 10px solid #F8E9E9;
+        top: -15px;
+        left: 93px;
+    }
+
+    .card-inside:before {
+        content: "";
+        position: absolute;
+        width: 160px;
+        height: 240px;
+        background-color: #F8E9E9;
+        border: 5px solid #F8E9E9;
+    }
+
+    .wishes {
+        position: absolute;
+        width: 140px;
+        text-align: left;
+        font-family: "Architects Daughter";
+        line-height: 14px;
+        font-size: 12px;
+        color: #1e2748;
+        height: 230px;
+        top: 8%;
+        left: 17px;
+    }
+}

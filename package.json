@@ -1,0 +1,11 @@
+{
+  "name": "christmas-wed-card",
+  "version": "1.0.0",
+  "description": "A chrismas card for friends at church",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zoe Wang",
+  "license": "ISC"
+}
