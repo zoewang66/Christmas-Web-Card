@@ -17,11 +17,11 @@ A festive and interactive **Christmas Greeting Web Card**, featuring beautiful a
 ## 🌐 Demo Preview
 
 📸 **Screenshot**
+![Christmas Card Screenshot](static/Screenshot1.png)
 
-![Christmas Card Screenshot](static/Screenshot 2025-04-02 at 7.01.26 pm.png)
-![Christmas Card Screenshot](static/Screenshot 2025-04-02 at 7.01.35 pm.png)
-![Christmas Card Screenshot](static/Screenshot 2025-04-02 at 7.01.42 pm.png)
+![Christmas Card Screenshot](static/Screenshot3.png)
 
+![Christmas Card Screenshot](static/Screenshot2.png)
 
 ---
 
@@ -47,9 +47,9 @@ A festive and interactive **Christmas Greeting Web Card**, featuring beautiful a
 ---
 
 ## 🎯 Customization Tips
--💡 You can change the background or cover image in style.css
--🧑‍🎨 Customize fonts using Google Fonts
--🎶 Replace silent night music with your own favorite holiday music
+- 💡 You can change the background or cover image in style.css
+- 🧑‍🎨 Customize fonts using Google Fonts
+- 🎶 Replace silent night music with your own favorite holiday music
 
 ---
 
